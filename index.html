@@ -2,65 +2,31 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PWA Inventario</title>
+
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body style="font-family: Arial; background: #f0f0f0; margin: 0">
-    <header
-      style="background: #000; color: #fff; padding: 20px; text-align: center"
-    >
+
+  <body>
+    <header>
       <h1>Control de Inventario</h1>
       <div>
         Estado:
-        <span id="status" style="padding: 5px 10px; border-radius: 5px"
-          >Cargando...</span
-        >
+        <span id="status">Cargando...</span>
       </div>
     </header>
 
-    <main style="max-width: 500px; margin: auto; padding: 20px">
-      <form
-        id="product-form"
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          background: white;
-          padding: 20px;
-          border-radius: 8px;
-        "
-      >
-        <input
-          type="text"
-          id="nombre"
-          placeholder="Producto"
-          required
-          style="padding: 10px"
-        />
-        <input
-          type="number"
-          id="cantidad"
-          placeholder="Cantidad"
-          required
-          style="padding: 10px"
-        />
-        <button
-          type="submit"
-          style="
-            padding: 10px;
-            background: orange;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-          "
-        >
-          Guardar
-        </button>
+    <main>
+      <form id="product-form">
+        <input type="text" id="nombre" placeholder="Producto" required />
+        <input type="number" id="cantidad" placeholder="Cantidad" required />
+        <button type="submit">Guardar</button>
       </form>
 
       <h2>Inventario Local</h2>
-      <ul id="lista-productos" style="padding: 0"></ul>
+      <ul id="lista-productos"></ul>
     </main>
 
     <script src="db.js"></script>
