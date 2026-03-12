@@ -25,7 +25,6 @@ self.addEventListener("activate", (e) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  // Si la petición es externa (Google), NO la toques, deja que falle si no hay red
   if (
     event.request.url.startsWith("http") &&
     !event.request.url.includes("127.0.0.1")

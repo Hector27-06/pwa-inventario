@@ -12,15 +12,12 @@ async function updateOnlineStatus() {
 
   if (online) {
     try {
-      // Intentamos conectar a un servidor externo que NO está en el SW
-      // Usamos 'no-cors' para evitar errores de seguridad, solo nos importa si llega o no
       await fetch("https://www.google.com/favicon.ico", {
         mode: "no-cors",
         cache: "no-store",
       });
       online = true;
     } catch (e) {
-      // Si falla la conexión a Google, estamos offline
       online = false;
     }
   }
